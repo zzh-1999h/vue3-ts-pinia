@@ -1,0 +1,30 @@
+[
+  {
+    "createAt": "2022-11-23T12:45:36.000Z",
+    "id": 7613,
+    "intro": "111",
+    "menuList": [
+      {
+        "children": [
+          {
+            "children": null,
+            "id": 39,
+            "name": "核心技术",
+            "parentId": 38,
+            "sort": 106,
+            "type": 2,
+            "url": "/main/analysis/overview"
+          }
+        ],
+        "icon": "el-icon-monitor",
+        "id": 38,
+        "name": "系统总览",
+        "sort": 1,
+        "type": 1,
+        "url": "/main/analysis"
+      }
+    ],
+    "name": "222",
+    "updateAt": "2022-11-23T12:45:41.000Z"
+  }
+]

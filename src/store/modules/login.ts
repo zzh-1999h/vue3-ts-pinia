@@ -9,11 +9,12 @@ import {
 import { IAccount } from '@/service/login/type'
 import localCache from '@/utils/cache'
 import router from '@/router'
-import { mapMenusToRoutes } from '@/utils/map-menus'
+import { mapMenusToRoutes, mapMenusToPermissions } from '@/utils/map-menus'
 export const useUserStore = defineStore('user', () => {
   const token = ref<string>('')
   const userInfo = ref<object>({})
   const userMenus = ref<string[]>([])
+  const permissions = ref<string[]>([])
   const accountLoginAction = async (payload: IAccount) => {
     // 1.实现登录逻辑
     const loginResult = await accountLoginRequest(payload)
@@ -41,6 +42,7 @@ export const useUserStore = defineStore('user', () => {
     // console.log('userMenus', userMenus)
     // 4.登录后跳到首页
     router.push('/main')
+    permissions.value = mapMenusToPermissions(userMenus.value)
   }
   // 页面刷新,数据持久化
   const loadLocalLogin = () => {
@@ -62,7 +64,8 @@ export const useUserStore = defineStore('user', () => {
     userInfo,
     userMenus,
     accountLoginAction,
-    loadLocalLogin
+    loadLocalLogin,
+    permissions
   }
 })
 

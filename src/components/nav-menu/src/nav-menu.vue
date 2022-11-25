@@ -47,7 +47,7 @@ import { useUserStore } from '@/store/modules/login'
 import { useRouter, useRoute } from 'vue-router'
 import { pathMapToMenu } from '@/utils/map-menus'
 const userMenus = useUserStore().userMenus as any
-console.log('userMenus', userMenus)
+// console.log('userMenus', userMenus)
 
 // router
 const router = useRouter()
